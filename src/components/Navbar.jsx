@@ -11,11 +11,8 @@ import "./Navbar.css";
 
 function Navbar() {
   return (
-    <div>
-      <h1>Navbar will be here</h1>
-      <button>Test 1</button>
-      <button>Test 2</button>
-      <button>Test 3</button>
+    <div className="navbar">
+      <h1>Lobby Tech </h1>
     </div>
   );
 }

@@ -2,14 +2,17 @@ import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Catalog from "./pages/Catalog";
 
 function App() {
   return (
     <div className="App">
       <Navbar></Navbar>
 
-      <h1>Welcome to my online store!!!</h1>
+      <Catalog></Catalog>
+
       <Footer></Footer>
+      {/* Here*/}
     </div>
   );
 }

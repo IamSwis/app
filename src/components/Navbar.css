@@ -5,3 +5,7 @@ h1 {
 .navbar button {
   font-weight: bold;
 }
+
+.background {
+  background-color: black;
+}
