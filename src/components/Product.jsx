@@ -1,13 +1,25 @@
 import "./Product.css";
 import QuantityAdjuster from "./QuantityAdjust";
+import constants from "../common/config";
 
 function Product(props) {
+  function add() {
+    console.log("adding Product");
+  }
+
   return (
     <div className="product">
+      <img
+        src={constants.IMAGE_PATH + props.info.image}
+        alt="main product"
+      ></img>
       <h6>{props.info.title}</h6>
       <label>{props.info.price}</label>
-      <img src="https://picsum.photos/200"></img>
+
       <QuantityAdjuster></QuantityAdjuster>
+      <button onClick={add} className="btn btn-lg btn-dark btn-success">
+        Add to Cart
+      </button>
     </div>
   );
 }

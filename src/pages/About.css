@@ -1,0 +1,19 @@
+.about {
+  background-color: black;
+}
+
+.about h3 {
+  color: purple;
+}
+
+.about .box {
+  background-color: goldenrod;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  margin: 50px;
+  width: 1500px;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+}

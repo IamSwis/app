@@ -1,8 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Catalog from "./pages/Catalog";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -10,6 +12,8 @@ function App() {
       <Navbar></Navbar>
 
       <Catalog></Catalog>
+
+      <About></About>
 
       <Footer></Footer>
       {/* Here*/}

@@ -1,11 +1,12 @@
+.navbar {
+  height: 50px;
+  background-color: goldenrod;
+}
+
 h1 {
-  color: red;
+  color: black;
 }
 
 .navbar button {
   font-weight: bold;
-}
-
-.background {
-  background-color: black;
 }

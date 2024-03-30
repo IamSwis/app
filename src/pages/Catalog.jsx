@@ -6,41 +6,39 @@ function Catalog() {
     {
       title: "Troposphere",
       price: 24.99,
-      category: "Local",
-      image:
-        "/Users/iamswis/Documents/SDGKU/Full Stack DEV /108/LobbyTech/app/public/images/pexels-josh-sorenson-570986.jpg",
+      category: "Tier 4",
+      image: "boa.png",
       _id: "001",
     },
     {
       title: "Stratosphere",
       price: 34.99,
-      category: "Local",
-      image: "https://picsum.photos/200",
+      category: "Tier 3",
+      image: "scar.jpg",
       _id: "002",
     },
     {
       title: "Mesosphere",
       price: 44.99,
-      category: "Local",
-      image: "https://picsum.photos/200",
+      category: "Tier 2",
+      image: "strat.jpg",
       _id: "003",
     },
     {
       title: "Magnetosphere",
       price: 54.99,
-      category: "Local",
-      image: "https://picsum.photos/200",
+      category: "Tier 1",
+      image: "topo.jpg",
       _id: "004",
     },
   ];
   return (
     <div className="catalog page">
-      <h1>Cloud Storage Free up your Space</h1>
+      <h1>Space Storage Trust Us Its Safe</h1>
 
-      <Product info={data[0]}></Product>
-      <Product info={data[1]}></Product>
-      <Product info={data[2]}></Product>
-      <Product info={data[3]}></Product>
+      {data.map((prod) => (
+        <Product key={prod._id} info={prod}></Product>
+      ))}
     </div>
   );
 }
