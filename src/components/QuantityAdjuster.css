@@ -1,3 +1,6 @@
+.quantity-adjust {
+  display: flex;
+}
 .quantity-adjust button {
   margin: 0 15px;
   margin-bottom: auto;

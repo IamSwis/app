@@ -14,7 +14,7 @@ function Product(props) {
         alt="main product"
       ></img>
       <h6>{props.info.title}</h6>
-      <label>{props.info.price}</label>
+      <label className="price">${props.info.price}</label>
 
       <QuantityAdjuster></QuantityAdjuster>
       <button onClick={add} className="btn btn-lg btn-dark btn-success">

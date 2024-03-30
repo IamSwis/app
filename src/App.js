@@ -5,6 +5,7 @@ import Catalog from "./pages/Catalog";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import About from "./pages/About";
+import ShoppingList from "./pages/ShoppingList";
 
 function App() {
   return (
@@ -15,8 +16,9 @@ function App() {
 
       <About></About>
 
+      <ShoppingList></ShoppingList>
+
       <Footer></Footer>
-      {/* Here*/}
     </div>
   );
 }

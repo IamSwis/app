@@ -4,7 +4,7 @@
   margin-bottom: 12px;
   vertical-align: top;
   display: inline-block;
-  width: 320px;
+  width: 250px;
   height: 380px;
   border-radius: 5px;
   margin: 0 7px 12px 0;
@@ -13,16 +13,21 @@
 .product h6 {
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: bolder;
   margin: 0;
 }
 
 .product img {
-  width: 280px;
-  height: 280px;
+  width: 250px;
+  height: 220px;
 }
 .btn {
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: black;
   color: white;
+}
+.product .price {
+  font-size: 18px;
 }

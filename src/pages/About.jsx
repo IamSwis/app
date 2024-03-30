@@ -6,21 +6,25 @@ function About() {
 
   function showData() {
     console.log("button clicked");
-    setContactVisible(true);
+    setContactVisible(!contactVisible);
   }
+
   return (
     <div className="about page">
       <h3>William Sims</h3>
 
-      <div className="box">
-        <p>
-          To get in touch with our team write to <b>contact@LTspace.io</b>
-        </p>
+      {contactVisible ? (
+        <div className="box">
+          <p>
+            To get in touch with our team write to <b>contact@LTspace.io</b>
+          </p>
+        </div>
+      ) : null}
 
-        <button className="btn btn-outline-dark">Lets Connect</button>
-      </div>
+      <button onClick={showData} className="btn btn-outline-dark">
+        Lets Connect
+      </button>
     </div>
   );
 }
-
 export default About;

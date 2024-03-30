@@ -1,9 +1,9 @@
 .navbar {
-  height: 50px;
+  height: 60px;
   background-color: goldenrod;
 }
 
-h1 {
+.navbar h1 {
   color: black;
 }
 
