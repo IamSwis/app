@@ -3,6 +3,7 @@ import "./ShoppingList.css";
 
 function ShoppingList() {
   const [list, setList] = useState(["Test40", "Test30", "Test"]);
+  const [text, setText] = useState("");
 
   function addItem() {
     console.log("adding");
@@ -12,14 +13,26 @@ function ShoppingList() {
     setList(copy);
   }
 
+  function handleTextChange(e) {
+    const val = e.target.value;
+    setText(val);
+  }
+
+  function deleteAll() {
+    setList([]);
+  }
+
   return (
     <div className="shopping-list page">
       <h3>Shopping List</h3>
 
       <div className="box">
-        <input type="text"></input>
+        <input onChange={handleTextChange} type="text"></input>
         <btn onClick={addItem} className="btn btn-lg btn-dark -outline-success">
           Add To Space
+        </btn>
+        <btn onClick={deleteAll} className="btn btn-sm btn-danger">
+          Clear
         </btn>
       </div>
 

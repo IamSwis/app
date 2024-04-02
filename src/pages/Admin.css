@@ -1,0 +1,49 @@
+.admin h1 {
+  color: red;
+  background-color: black;
+}
+
+.admin {
+  background-color: goldenrod;
+}
+.admin .parent {
+  display: flex;
+  align-items: left;
+  justify-content: center;
+}
+
+.admin .prods {
+  flex: 2;
+  margin: 0 20px;
+  max-width: 600px;
+}
+
+.admin .coupons {
+  flex: 1;
+  margin: 0 20px;
+  max-width: 500px;
+}
+
+.admin .form {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 18px;
+  text-align: left;
+  background-color: darkgoldenrod;
+}
+
+.admin .form div {
+  margin-bottom: 10px;
+}
+
+.admin .form ul {
+  list-style: none;
+  margin-left: 0;
+  margin-top: 10px;
+}
+
+.admin li {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+}

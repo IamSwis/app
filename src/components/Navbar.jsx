@@ -9,13 +9,17 @@
 
 import "./Navbar.css";
 
+import { Link } from "react-router-dom";
+import Catalog from "../pages/Catalog";
+import ShoppingList from "../pages/ShoppingList";
+
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to="#">
           LobbyTech
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -30,48 +34,41 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
+              <Link className="nav-link active" aria-current="page" to="/Home">
                 Home
-              </a>
+              </Link>
             </li>
+
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/Catalog"
               >
-                Dropdown
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
+                Catalog
+              </Link>
             </li>
+
             <li className="nav-item">
-              <a className="nav-link disabled">Disabled</a>
+              <Link className="nav-link active" aria-current="page" to="/About">
+                About
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/ShoppingList"
+              >
+                ShoppingList
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link active" aria-current="page" to="/Admin">
+                Admin
+              </Link>
             </li>
           </ul>
           <form className="d-flex" role="search">
