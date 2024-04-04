@@ -1,34 +1,34 @@
 import { useState } from "react";
 import "./QuantityAdjuster.css";
 
-//State variables
-function QuantityAdjuster({ initialQuantity = 1 }) {
-  const [quantity, setQuantity] = useState(initialQuantity);
+function QuantityAdjuster() {
+  const [quantity, setQuantity] = useState(1);
 
   // Function to increase quantity
-  const increaseQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-    console.log("+ clicked");
-  };
+  function increaseQuantity() {
+    setQuantity(quantity + 1);
+  }
 
   // Function to decrease quantity, ensuring it never goes below 1
-  const decreaseQuantity = () => {
-    setQuantity((prevQuantity) => Math.max(1, prevQuantity - 1));
-    console.log("+ clicked");
-  };
+  function decreaseQuantity() {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  }
 
   return (
     <div className="quantity-adjust">
-      <button disabled={quantity == 1} onClick={decreaseQuantity}></button>
+      {/* Adjusted the button to include a '-' symbol for clarity */}
       <button
-        className="btn btn-lg btn-dark -outline-success"
+        className="btn btn-lg btn-outline-success"
         onClick={decreaseQuantity}
+        disabled={quantity === 1} // Use strict equality for consistency
       >
         -
       </button>
       <span>{quantity}</span>
       <button
-        className="btn btn-lg btn-dark -outline-success"
+        className="btn btn-lg btn-outline-success"
         onClick={increaseQuantity}
       >
         +
