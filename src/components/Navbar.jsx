@@ -1,19 +1,24 @@
-/**
- * Components:
- * are functions
- * start with capital letters
- * should always return something
- *
- * are usually exported
- */
-
 import "./Navbar.css";
 
 import { Link } from "react-router-dom";
-import Catalog from "../pages/Catalog";
-import ShoppingList from "../pages/ShoppingList";
+import DataContext from "../context/dataContext";
+import { useContext } from "react";
 
 function Navbar() {
+  const cart = useContext(DataContext).cart;
+
+  console.log(cart);
+
+  function getNumProducts() {
+    let total = 0;
+    for (let i = 0; i < cart.length; i++) {
+      let prod = cart[i];
+      total += prod.quantity;
+    }
+
+    return total;
+  }
+
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
@@ -78,9 +83,13 @@ function Navbar() {
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-dark btn-outline-success" type="submit">
-              Search
-            </button>
+            <Link
+              className="btn btn-dark btn-outline-success"
+              type="submit"
+              to="/Cart"
+            >
+              {getNumProducts}Cart
+            </Link>
           </form>
         </div>
       </div>

@@ -1,7 +1,9 @@
 .quantity-adjust {
   display: flex;
+  align-items: center; /* Align items vertically in the center */
+  justify-content: center; /* Horizontally center the content */
 }
+
 .quantity-adjust button {
-  margin: 0 15px;
-  margin-bottom: auto;
+  margin: 0 15px; /* Keep your margin for spacing between buttons */
 }

@@ -1,23 +1,30 @@
-import "./Product.css";
+import React, { useContext, useState } from "react";
+import DataContext from "../context/dataContext"; // Adjust the import path as needed
 import QuantityAdjuster from "./QuantityAdjust";
 import constants from "../common/config";
-import { useState } from "react";
+import "./Product.css";
 
 function Product(props) {
   const [quantity, setQuantity] = useState(1);
+  const { addProductToCart } = useContext(DataContext); // Use useContext to access DataContext
 
   function add() {
-    console.log("adding Product");
+    // Prepare the product object to add to the cart
+    const productToAdd = {
+      ...props.info,
+      quantity: quantity,
+    };
+    addProductToCart(productToAdd); // Add the product to the cart
+    console.log("Adding product:", props.info.title, "Quantity:", quantity);
   }
 
   function quantityChanged(qty) {
-    console.log("Updated your quantity");
+    console.log("Updated your quantity to:", qty);
     setQuantity(qty);
   }
 
+  // Calculate total price based on the quantity
   function getTotal() {
-    //ton of logic here
-
     let total = props.info.price * quantity;
     return total.toFixed(2);
   }
@@ -26,13 +33,13 @@ function Product(props) {
     <div className="product">
       <img
         src={constants.IMAGE_PATH + props.info.image}
-        alt="main product"
-      ></img>
+        alt={props.info.title}
+      />
       <h6>{props.info.title}</h6>
-      <label className="price">${props.info.price}</label>
-      <label className="total">${props.info.price.toFixed(2)}</label>
+      <label className="price">Price: ${props.info.price.toFixed(2)}</label>
+      <label className="total">Total: ${getTotal()}</label>
 
-      <QuantityAdjuster onChange={quantityChanged}></QuantityAdjuster>
+      <QuantityAdjuster initialQuantity={1} onChange={quantityChanged} />
       <button onClick={add} className="btn btn-lg btn-dark btn-success">
         Add to Cart
       </button>

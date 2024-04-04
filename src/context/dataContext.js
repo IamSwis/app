@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 /**
- *  Context isan interface that can be used
+ *  Context is an interface that can be used
  */
 
 const DataContext = createContext({

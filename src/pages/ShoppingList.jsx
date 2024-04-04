@@ -6,16 +6,15 @@ function ShoppingList() {
   const [text, setText] = useState("");
 
   function addItem() {
-    console.log("adding");
-
-    let copy = [...list];
-    copy.push("NEW");
-    setList(copy);
+    if (text.trim() !== "") {
+      // Check if the text is not just empty spaces
+      setList((prevList) => [...prevList, text]);
+      setText(""); // Clear the input field after adding
+    }
   }
 
   function handleTextChange(e) {
-    const val = e.target.value;
-    setText(val);
+    setText(e.target.value);
   }
 
   function deleteAll() {
@@ -27,18 +26,22 @@ function ShoppingList() {
       <h3>Shopping List</h3>
 
       <div className="box">
-        <input onChange={handleTextChange} type="text"></input>
-        <btn onClick={addItem} className="btn btn-lg btn-dark -outline-success">
+        <input value={text} onChange={handleTextChange} type="text" />
+        <button
+          onClick={addItem}
+          className="btn btn-lg btn-dark btn-outline-success"
+        >
           Add To Space
-        </btn>
-        <btn onClick={deleteAll} className="btn btn-sm btn-danger">
+        </button>
+        <button onClick={deleteAll} className="btn btn-sm btn-danger">
           Clear
-        </btn>
+        </button>
       </div>
 
       <ul>
-        {list.map((item) => (
-          <li key={item}>{item}</li>
+        {list.map((item, index) => (
+          // Use index as key for simplicity, consider unique IDs for more complex scenarios
+          <li key={index}>{item}</li>
         ))}
       </ul>
     </div>
