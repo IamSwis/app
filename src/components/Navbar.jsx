@@ -50,7 +50,7 @@ function Navbar() {
                 aria-current="page"
                 to="/Catalog"
               >
-                Catalog
+                Plans
               </Link>
             </li>
 
@@ -66,7 +66,7 @@ function Navbar() {
                 aria-current="page"
                 to="/ShoppingList"
               >
-                ShoppingList
+                Request
               </Link>
             </li>
 

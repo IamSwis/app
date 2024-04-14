@@ -23,7 +23,7 @@ function ShoppingList() {
 
   return (
     <div className="shopping-list page">
-      <h3>Shopping List</h3>
+      <h3> Items to Add</h3>
 
       <div className="box">
         <input value={text} onChange={handleTextChange} type="text" />
